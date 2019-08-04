@@ -35,8 +35,6 @@ public class App {
 
 
 
-
-
         Point point1 = new Point(1,1);
         Point point2 = point1;
         point1.x = 3;
