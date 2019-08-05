@@ -8,8 +8,13 @@
             "type": "java",
             "name": "CodeLens (Launch) - App",
             "request": "launch",
+<<<<<<< HEAD
             "mainClass": "app.App",
             "projectName": "SchoolApp"
+=======
+            "mainClass": "SchoolApp.src.app.App",
+            "projectName": "VSCode-Random-Repo_b237af66"
+>>>>>>> 9796ac9ec23cf5d97923c68ce0b75f0716153afe
         },
         {
             "type": "java",
