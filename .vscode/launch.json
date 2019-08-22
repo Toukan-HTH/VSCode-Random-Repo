@@ -1,26 +1,11 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - App",
+            "name": "CodeLens (Launch) - HelloWorld",
             "request": "launch",
-<<<<<<< HEAD
-            "mainClass": "app.App",
-            "projectName": "SchoolApp"
-=======
-            "mainClass": "SchoolApp.src.app.App",
-            "projectName": "VSCode-Random-Repo_b237af66"
->>>>>>> 9796ac9ec23cf5d97923c68ce0b75f0716153afe
-        },
-        {
-            "type": "java",
-            "name": "Debug (Launch) - Current File",
-            "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "HelloWorld"
+            "console": "integratedTerminal/externalTerminal"
         }
     ]
 }
