@@ -36,5 +36,28 @@ class Valuta{
         sek = sek - minuttt*60;
 
         System.out.println(timerr + " h " + minuttt + " m " + sek + " s ");
+
+
+        //* Workshop 22.08.2019 //
+
+        //! Double Version //
+        Scanner pt = new Scanner(System.in);
+        System.out.println("Lengde i Meter");
+        double lengde = pt.nextDouble();
+        System.out.println("Bredde i Meter");
+        double bredde = pt.nextDouble();
+        double areal = lengde * bredde;
+        System.out.println("Arealet er : " + areal + " m^2");
+    
+        //! Integer Version //
+        /*Scanner pt = new Scanner(System.in);*/
+        System.out.println("Lengde i Meter");
+        int lengdee = pt.nextInt();
+        System.out.println("Bredde i Meter");
+        int breddee = pt.nextInt();
+        int areall = lengdee * breddee;
+        System.out.println("Arealet er : " + areall + " m^2");
+
+
     }
 }
