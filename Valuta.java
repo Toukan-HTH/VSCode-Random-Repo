@@ -59,5 +59,60 @@ class Valuta{
         System.out.println("Arealet er : " + areall + " m^2");
 
 
-    }
-}
+        /* Øving 2 Oppgave 1*/
+        System.out.println("Enter arstall");
+        double arstall = pt.nextDouble();
+        if (arstall >= 100){
+            double deling = arstall / 400;
+            if (arstall%400 == 0){
+                System.out.println("Arstallet er et skuddar");
+                }else{
+                System.out.println("Arstaller er ikke et skuddar");
+                }
+            }
+            if (arstall <= 99){
+                double deling = arstall / 4;
+                if (arstall%4 == 0){
+                    System.out.println("Arstallet er et skuddar");
+                    }else{
+                    System.out.println("Arstaller er ikke et skuddar");
+                    }
+                }  
+                
+                
+
+
+            /* Øving 2 Oppgave 2*/
+            Scanner ot = new Scanner(System.in);
+            double kjottdeiga = 79.78; //! Kilopris
+            double kjottdeigb = 79.00; //! Kilopris
+            System.out.println("Enter Antall Kilo Kjottdeig");
+            double kilo = ot.nextDouble();
+            double prisa = kilo*kjottdeiga;
+            double prisb = kilo*kjottdeigb;
+            if(prisa>prisb){
+                System.out.println("Kjottdeig A er billigst, Den koster til sammen " + prisa + "Kr");
+            }else{
+                System.out.println("Kjottdeig B er billigst, Den Koster til sammen " + prisb + "Kr");
+            }
+
+            /*Øving 3 Oppgave 1*/
+            System.out.println("Enter tall fra multiplikasjonstabellen");
+            int gange = ot.nextInt();
+            int resultat;
+                for (int i = 0; i<11; i++){
+                    resultat=gange*i;
+                    System.out.println(resultat);
+                
+            }
+
+
+            /*Øving 3 Oppgave 2*/
+            int prim = 1;
+            for(int prim = 1;){
+                System.out.println("Enter Nummer til Analyse");
+                double primtall = ot.nextDouble();
+                if()
+            }
+        }
+} 
