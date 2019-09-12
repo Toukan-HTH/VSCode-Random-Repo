@@ -19,29 +19,27 @@ class Valuta{
         double resultat=euro*eurofraleser;
         return resultat;
     }
+    public double getRegnOTNFD(double dollarfraleser){
+        double resultat=dollar*dollarfraleser;
+        return resultat;
+    }
+    public double getRegnOTNFS(double sekfraleser){
+        double resultat=sek*sekfraleser;
+        return resultat;
+    }
+    public double getRegnFTVD(double nokfraleser){
+        double resulatat = nokfraleser/dollar;
+        return resulatat;
+    }
+    public double getRegnFTVS(double nokfraleser){
+        double resulatat = nokfraleser/sek;
+        return resulatat;
+    }
+    public double getRegnFTVE(double nokfraleser){
+        double resulatat = nokfraleser/euro;
+        return resulatat;
+    }
 }
-    /*
-    public double getRegnOTNFD(double resultat, double dollar, double nok){
-        resultat=dollar*nok;
-        return resultat;
-    }
-    public double getRegnOTNFS(double resultat, double sek, double nok){
-        return resultat;
-    }
-    public double getRegnOFNTE(double resultat, double euro, double nok){
-        return resultat;
-    }
-    public double getRegnOFNTD(double resultat, double dollar, double nok){
-        return resultat;
-    }
-    public double getRegnOFNTS(double resultat, double sek, double nok){
-        return resultat;
-    }
-}
-*/
-
-
-
 
 
 
@@ -51,10 +49,6 @@ class Valuta{
 
 class oving4_1{
     public static void main(String[] args){
-        /*double eurofraleser = 20;
-        Valuta fraEuroTilNok = new Valuta(1, 0.92, 9.87, 8.95);
-        double resultat = fraEuroTilNok.getRegnOTNFE(eurofraleser);
-        System.out.println(resultat);*/
         int fraellertil=0;
         while(fraellertil!=1 && fraellertil!=2 && fraellertil !=3){
             Scanner lt = new Scanner(System.in);
@@ -72,8 +66,6 @@ class oving4_1{
             System.exit(1);
         }
         if(fraellertil==1){
-
-        }else if(fraellertil==2){
             int valutavalgt=0;
             while(valutavalgt!=1 && valutavalgt!=2 && valutavalgt !=3 && valutavalgt!=4){
                 System.out.println("Vilken Valuta vil du konvertere kroner til?\n 1: Dollar\n 2: Sek\n 3: Euro\n 4: Avslutt");
@@ -88,11 +80,106 @@ class oving4_1{
                 }
             }
             if(valutavalgt==1){
-
+                double nokfraleser=0;
+                while(nokfraleser==0){
+                    System.out.println("Hvor mange Kroner vil du konvertere til Doller?");
+                    Scanner lt = new Scanner(System.in);
+                    String noklestinn =lt.nextLine();
+                    try{
+                        nokfraleser = Double.parseDouble(noklestinn);
+                    }catch (NumberFormatException nfe){
+                    }
+                }
+                Valuta dollarLestInn = new Valuta(1, 0.92, 9.87, 8.97);
+                double resultat = dollarLestInn.getRegnFTVD(nokfraleser);
+                System.out.println("Dette tilsvarer " + resultat + " Doller");
             }else if(valutavalgt==2){
-
+                double nokfraleser=0;
+                while(nokfraleser==0){
+                    System.out.println("Hvor mange Kroner vil du konvertere til Sek?");
+                    Scanner lt = new Scanner(System.in);
+                    String noklestinn =lt.nextLine();
+                    try{
+                        nokfraleser = Double.parseDouble(noklestinn);
+                    }catch (NumberFormatException nfe){
+                    }
+                }
+                Valuta dollarLestInn = new Valuta(1, 0.92, 9.87, 8.97);
+                double resultat = dollarLestInn.getRegnFTVS(nokfraleser);
+                System.out.println("Dette tilsvarer " + resultat + " Sek");
             }else if(valutavalgt==3){
-
+                double nokfraleser=0;
+                while(nokfraleser==0){
+                    System.out.println("Hvor mange Kroner vil du konvertere til Euro?");
+                    Scanner lt = new Scanner(System.in);
+                    String noklestinn =lt.nextLine();
+                    try{
+                        nokfraleser = Double.parseDouble(noklestinn);
+                    }catch (NumberFormatException nfe){
+                    }
+                }
+                Valuta dollarLestInn = new Valuta(1, 0.92, 9.87, 8.97);
+                double resultat = dollarLestInn.getRegnFTVE(nokfraleser);
+                System.out.println("Dette tilsvarer " + resultat + " Euro");
+            }else if(valutavalgt==4){
+                System.exit(1);
+            }
+        }else if(fraellertil==2){
+            int valutavalgt=0;
+            while(valutavalgt!=1 && valutavalgt!=2 && valutavalgt !=3 && valutavalgt!=4){
+                System.out.println("Vilken Valuta vil du konvertere til kroner?\n 1: Dollar\n 2: Sek\n 3: Euro\n 4: Avslutt");
+                Scanner lt = new Scanner(System.in);
+                String valutafranok=lt.nextLine();
+                try{
+                    valutavalgt = Integer.parseInt(valutafranok);
+                }catch (NumberFormatException nfe){
+                }
+                if(valutavalgt !=1 && valutavalgt !=2 && valutavalgt !=3 && valutavalgt !=4){
+                    System.out.println("Dette er ukke et valid tall");
+                }
+            }
+            if(valutavalgt==1){
+                double dollarfraleser=0;
+                while(dollarfraleser==0){
+                    System.out.println("Hvor mange Doller vil du konvertere til Kroner?");
+                    Scanner lt = new Scanner(System.in);
+                    String dollarlestinn =lt.nextLine();
+                    try{
+                        dollarfraleser = Double.parseDouble(dollarlestinn);
+                    }catch (NumberFormatException nfe){
+                    }
+                }
+                Valuta dollarLestInn = new Valuta(1, 0.92, 9.87, 8.97);
+                double resultat = dollarLestInn.getRegnOTNFD(dollarfraleser);
+                System.out.println("Dette tilsvarer " + resultat + " Kroner");
+            }else if(valutavalgt==2){
+                double sekfraleser=0;
+                while(sekfraleser==0){
+                    System.out.println("Hvor mange Sek vil du konvertere til Kroner?");
+                    Scanner lt = new Scanner(System.in);
+                    String dollarlestinn =lt.nextLine();
+                    try{
+                        sekfraleser = Double.parseDouble(dollarlestinn);
+                    }catch (NumberFormatException nfe){
+                    }
+                }
+                Valuta dollarLestInn = new Valuta(1, 0.92, 9.87, 8.97);
+                double resultat = dollarLestInn.getRegnOTNFS(sekfraleser);
+                System.out.println("Dette tilsvarer " + resultat + " Kroner");
+            }else if(valutavalgt==3){
+                double eurofraleser=0;
+                while(eurofraleser==0){
+                    System.out.println("Hvor mange Euro vil du konvertere til Kroner?");
+                    Scanner lt = new Scanner(System.in);
+                    String dollarlestinn =lt.nextLine();
+                    try{
+                        eurofraleser = Double.parseDouble(dollarlestinn);
+                    }catch (NumberFormatException nfe){
+                    }
+                }
+                Valuta dollarLestInn = new Valuta(1, 0.92, 9.87, 8.97);
+                double resultat = dollarLestInn.getRegnOTNFE(eurofraleser);
+                System.out.println("Dette tilsvarer " + resultat + " Kroner");
             }else if(valutavalgt==4){
                 System.exit(1);
             }
