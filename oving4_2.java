@@ -15,7 +15,7 @@ class Player1{
         sum=sum+terningkast;
         return sum;
     }
-    public double kastTerning(double terningkast){
+    public int kastTerning(int terningkast){
         return terningkast;
     }
     public double erFerdig(double sum){
