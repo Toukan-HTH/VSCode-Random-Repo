@@ -1,9 +1,11 @@
+import java.util.Scanner;
+
 class oving5_1{
 private int nevner;
 private int teller;
 private int nynevner;
 
-    public oving5_1(int teller, int nevner) {
+    public oving5_1(int teller, int nevner){
         this.teller = teller;
         this.nevner = nevner;
     }
@@ -13,36 +15,65 @@ private int nynevner;
         nevner=1;
     }
 
-    public void getPlus(int teller, int nevner, int nynevner, int nevnerinn, int tellerinn){
+    public void getPlus(int teller, int nevner, int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
+        if(nevner==0 || nevnerinn==0){
+            throw new IllegalArgumentException("Nevner kan ikke vere 0");
+        }
         nynevner=nevner*nevnerinn;
         tellerinn=tellerinn*nevner;
         teller=teller*nevnerinn;
-        int nyteller=teller+tellerinn;
-        System.out.println("Svaret er" + nyteller + "\n"+ "         " + nynevner);
+        int nyteller=tellerinn+teller;
+        System.out.println("\n PLUS : Svaret er " + nyteller + "\n"+ "                   " + nynevner);
 
     }
 
-    public void getMinus(int teller, int nevner){
+    public void getMinus(int teller, int nevner, int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
+        if(nevner==0 || nevnerinn==0){
+            throw new IllegalArgumentException("Nevner kan ikke vere 0");
+        }
+        nynevner=nevner*nevnerinn;
+        tellerinn=tellerinn*nevner;
+        teller=teller*nevnerinn;
+        int nyteller=teller-tellerinn;
+        System.out.println("\n MINUS : Svaret er " + nyteller + "\n"+ "                   " + nynevner);
     }
     
-    public void getGange(int teller, int nevner){
+    public void getGange(int teller, int nevner, int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
+        if(nevner==0 || nevnerinn==0){
+            throw new IllegalArgumentException("Nevner kan ikke vere 0");
+        }
+        nynevner=nevner*nevnerinn;
+        int nyteller=teller*tellerinn;
+        System.out.println("\n GANGE : Svaret er " + nyteller + "\n"+ "                   " + nynevner);
     }
 
-    public void getDeling(int teller, int nevner){
+    public void getDeling(int teller, int nevner, int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
+        if(nevner==0 || nevnerinn==0){
+            throw new IllegalArgumentException("Nevner kan ikke vere 0");
+        }
+        nynevner=nevner*tellerinn;
+        int nyteller=teller*nevnerinn;
+        System.out.println("\n DELING: Svaret er " + nyteller + "\n"+ "                   " + nynevner);
     }
     public static void main(String[] args){
         int teller=0;
         int nevner=0;
-        oving5_1 brok1 = new oving5_1(teller, nevner); //!int teller, int nevner, int nynevner, int nevnerinn, int tellerinn//
-        brok1.getPlus(2, 3, 0, 6, 3);
-    }
+        oving5_1 brok1 = new oving5_1(teller, nevner); //!int teller, int nevner,int tellerinn, int nevnerinn//
+        brok1.getPlus(3, 6, 2, 3);
+        brok1.getMinus(3, 1, 3, 2);
+        brok1.getDeling(3, 2, 3, 2);
+        brok1.getGange(3, 2, 3, 2);
+
+
 }
+}
+
 

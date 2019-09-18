@@ -184,7 +184,7 @@ class oving4_2{
                 erFerdig=kastTerning1.erFerdig();
             }
             if(sumPoeng1==100){
-                System.out.println("\nPlayer 1 wins");
+                System.out.println("\nPlayer 1  wins");
                 erFerdig=kastTerning2.erFerdig();
             }
 
