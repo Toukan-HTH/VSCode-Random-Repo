@@ -15,6 +15,8 @@ class Valuta{
         this.euro=euro;
         this.sek=sek;
     }
+
+
     public double getRegnOTNFE(double eurofraleser){
         double resultat=euro*eurofraleser;
         return resultat;
