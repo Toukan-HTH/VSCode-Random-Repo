@@ -14,8 +14,14 @@ private int nynevner;
         this.teller = teller;
         nevner=1;
     }
+    public int getteller(){
+        return teller;
+    }
+    public int getnevner(){
+        return nevner;
+    }
 
-    public void getPlus(int teller, int nevner, int tellerinn, int nevnerinn){
+    public void getPlus(int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
         if(nevner==0 || nevnerinn==0){
@@ -26,14 +32,14 @@ private int nynevner;
         teller=teller*nevnerinn;
         int nyteller=tellerinn+teller;
         if(nyteller!=0){
-            System.out.println("\n PLUS : Svaret er " + nyteller + "\n"+ "                   " + nynevner);
+            System.out.println("\n PLUS : Svaret er " + nyteller + "\n"+ "                  " + nynevner);
         }else if(nyteller==0){
             System.out.println("\n PLUS : Svaret er " + nyteller);
         }
 
     }
 
-    public void getMinus(int teller, int nevner, int tellerinn, int nevnerinn){
+    public void getMinus(int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
         if(nevner==0 || nevnerinn==0){
@@ -50,7 +56,7 @@ private int nynevner;
         }
     }
     
-    public void getGange(int teller, int nevner, int tellerinn, int nevnerinn){
+    public void getGange(int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
         if(nevner==0 || nevnerinn==0){
@@ -65,7 +71,7 @@ private int nynevner;
         }
     }
 
-    public void getDeling(int teller, int nevner, int tellerinn, int nevnerinn){
+    public void getDeling(int tellerinn, int nevnerinn){
         this.teller=teller;
         this.nevner=nevner;
         if(nevner==0 || nevnerinn==0){
@@ -80,13 +86,16 @@ private int nynevner;
         }
     }
     public static void main(String[] args){
-        int teller=0;
-        int nevner=0;
-        oving5_1 brok1 = new oving5_1(teller, nevner); //!int teller, int nevner,int tellerinn, int nevnerinn//
-        brok1.getPlus(3, 6, 2, 3);
-        brok1.getMinus(3, 1, 3, 1);
-        brok1.getDeling(3, 2, 3, 2);
-        brok1.getGange(3, 2, 3, 2);
+        oving5_1 brok1 = new oving5_1(3, 6);
+        oving5_1 brok2 = new oving5_1(3);
+        brok1.getPlus(6, 3);
+        brok1.getMinus(7, 6);
+        brok1.getDeling(3, 3);
+        brok1.getGange(3, 6);
+
+        int teller=brok2.getteller();
+        int nevner = brok2.getnevner();
+        System.out.println(teller + "  " + nevner);
 
 
 }
