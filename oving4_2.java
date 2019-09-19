@@ -179,13 +179,17 @@ class oving4_2{
             System.out.println(sumPoeng1 + " Sum");
             sumPoeng2=kastTerning2.getSumPoeng(roll21, roll22, roll23, roll24, roll25, roll26);
             System.out.println(sumPoeng2 + " Sum\n");
-            if(sumPoeng2==100){
+            if(sumPoeng2==100 && sumPoeng1!=100){
                 System.out.println("\nPlayer 2 wins");
                 erFerdig=kastTerning1.erFerdig();
             }
-            if(sumPoeng1==100){
+            if(sumPoeng1==100 && sumPoeng2!=100){
                 System.out.println("\nPlayer 1  wins");
                 erFerdig=kastTerning2.erFerdig();
+            }
+            if(sumPoeng1==100 && sumPoeng2==100){
+                System.out.println("Begge vant samtidig");
+                erFerdig=kastTerning1.erFerdig();
             }
 
     }
