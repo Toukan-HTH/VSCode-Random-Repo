@@ -1,47 +1,6 @@
 import java.util.Scanner;
 
-class oving5_1{
-private int nevner;
-private int teller;
-private int nynevner;
-
-    public oving5_1(int teller, int nevner){
-        this.teller = teller;
-        this.nevner = nevner;
-    }
-
-    public oving5_1(int teller) {
-        this.teller = teller;
-        nevner=1;
-    }
-    public int getteller(){
-        return teller;
-    }
-    public int getnevner(){
-        return nevner;
-    }
-
-    public void getPlus(int tellerinn, int nevnerinn){
-        this.teller=teller;
-        this.nevner=nevner;
-        if(nevner==0 || nevnerinn==0){
-            throw new IllegalArgumentException("Nevner kan ikke vere 0");
-        }
-        nynevner=nevner*nevnerinn;
-        tellerinn=tellerinn*nevner;
-        teller=teller*nevnerinn;
-        int nyteller=tellerinn+teller;
-        if(nyteller!=0){
-            System.out.println("\n PLUS : Svaret er " + nyteller + "\n"+ "                  " + nynevner);
-        }else if(nyteller==0){
-            System.out.println("\n PLUS : Svaret er " + nyteller);
-        }
-
-    }
-
-    public void getMinus(int tellerinn, int nevnerinn){
-        this.teller=teller;
-        this.nevner=nevner;
+   /* public void getMinus(int tellerinn, int nevnerinn){
         if(nevner==0 || nevnerinn==0){
             throw new IllegalArgumentException("Nevner kan ikke vere 0");
         }
@@ -54,11 +13,11 @@ private int nynevner;
         }else if(nyteller==0){
             System.out.println("\n MINUS : Svaret er " + nyteller);
         }
+        this.teller=nyteller;
+        this.nevner=nynevner;
     }
     
     public void getGange(int tellerinn, int nevnerinn){
-        this.teller=teller;
-        this.nevner=nevner;
         if(nevner==0 || nevnerinn==0){
             throw new IllegalArgumentException("Nevner kan ikke vere 0");
         }
@@ -69,11 +28,11 @@ private int nynevner;
         }else if(nyteller==0){
             System.out.println("\n GANGE : Svaret er " + nyteller);
         }
+        this.teller=nyteller;
+        this.nevner=nynevner;
     }
 
     public void getDeling(int tellerinn, int nevnerinn){
-        this.teller=teller;
-        this.nevner=nevner;
         if(nevner==0 || nevnerinn==0){
             throw new IllegalArgumentException("Nevner kan ikke vere 0");
         }
@@ -84,21 +43,55 @@ private int nynevner;
         }else if(nyteller==0){
             System.out.println("\n DELING: Svaret er " + nyteller);
         }
+        this.teller=nyteller;
+        this.nevner=nynevner;
     }
+
+*/
+class oving5_1{
     public static void main(String[] args){
-        oving5_1 brok1 = new oving5_1(3, 6);
-        oving5_1 brok2 = new oving5_1(3);
-        brok1.getPlus(6, 3);
-        brok1.getMinus(7, 6);
-        brok1.getDeling(3, 3);
-        brok1.getGange(3, 6);
+        System.out.println("1: Pluss    2: Minus     3: Deling     4: Gange      5: Avslutt");
+        Brok brok = new Brok(5, 2);
+        Brok brok2Brok = new Brok(1, 2);
+        Scanner sc = new Scanner(System.in);
+        int menu=sc.nextInt();
+        switch(menu){
+            case 1:
+            brok.getPlus(brok2Brok);
+            int nevner=brok.getnevner();
+            int teller=brok.getteller();
+            System.out.println(teller);
+            System.out.println(nevner);
+            break;
 
-        int teller=brok2.getteller();
-        int nevner = brok2.getnevner();
-        System.out.println(teller + "  " + nevner);
+            case 2:
+            brok.getMinus(brok2Brok);
+            int nevnerr=brok.getnevner();
+            int tellerr=brok.getteller();
+            System.out.println(tellerr);
+            System.out.println(nevnerr);
+            break;
 
+            case 3:
+            brok.getDeling(brok2Brok);
+            int nevnerrr=brok.getnevner();
+            int tellerrr=brok.getteller();
+            System.out.println(tellerrr);
+            System.out.println(nevnerrr);
+            break;
 
-}
+            case 4:
+            brok.getGange(brok2Brok);
+            int nevnerrrr=brok.getnevner();
+            int tellerrrr=brok.getteller();
+            System.out.println(tellerrrr);
+            System.out.println(nevnerrrr);
+            break;
+
+            case 5:
+            break;
+        }
+    }
 }
 
 
