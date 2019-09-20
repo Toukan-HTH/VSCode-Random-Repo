@@ -27,7 +27,7 @@ class oving3_1{
         int resultatt;
         int i = 0;
         int u = 0;
-        int g = 0;
+        int g = 1;
             
             while(i<10){
                 i++;
