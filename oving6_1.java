@@ -37,7 +37,7 @@ class oving6_1{
             int tall = generator.nextInt(10);
             Array[i]=tall;
         }
-        System.out.println(Array[999]);
+        System.out.println(Array[4999]);
 
 
 
