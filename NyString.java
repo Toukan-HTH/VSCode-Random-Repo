@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import jdk.nashorn.internal.ir.IndexNode;
 class NyString{
     final String text = "Dette er en eksempeltekst";
 
@@ -75,7 +74,7 @@ class NyString{
         System.out.println(innText);
         System.out.println(fjerne);
         System.out.println(ferdig);
-        System.out.println(innText.indexOf( 'e' ));
+        //System.out.println(innText.indexOf( 'e' ));
 
     
     }
