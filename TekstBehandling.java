@@ -67,6 +67,7 @@ class TekstBehandling{
         String newString = enTekst.replaceAll(gammeltOrd, nyttOrd);
         return newString;
     }
+    
     public String getEnTekst(){
         return enTekst;
     }
