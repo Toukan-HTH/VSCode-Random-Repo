@@ -24,8 +24,7 @@ class TekstBehandling{
         double average = 0;
         double sum = 0;
 
-        String[] parts =enTekst.split("[ .,?!\n?';  ]");
-        //ArrayList<String> gfg = new ArrayList<String>(parts); 
+        String[] parts =enTekst.split("[ .,?!\n?';  ]"); 
         List<String> list = new ArrayList<String>(Arrays.asList(parts));
         list.removeAll(Arrays.asList("", null));
 
@@ -39,7 +38,6 @@ class TekstBehandling{
             count++;
         }
         average=sum/count;
-        System.out.println(list);
         return average;
     }
 
@@ -67,7 +65,7 @@ class TekstBehandling{
         String newString = enTekst.replaceAll(gammeltOrd, nyttOrd);
         return newString;
     }
-    
+
     public String getEnTekst(){
         return enTekst;
     }
