@@ -10,10 +10,10 @@ class Person{
     private String birthYear;
 
 
-    public Person(String Fornavnny, String etternavnny, String Fødselsdatony){
+    public Person(String Fornavnny, String etternavnny, String Fodselsdatony){
         this.fornavn=Fornavnny;
         this.etternavn=etternavnny;
-        this.birthYear=Fødselsdatony;
+        this.birthYear=Fodselsdatony;
     }
 
 
@@ -25,7 +25,7 @@ class Person{
         return etternavn;
     }
 
-    public String getFødselsdato(){
+    public String getFodselsdato(){
         return birthYear;
     }
 
@@ -45,7 +45,7 @@ class Person{
         this.etternavn=nyEtternavn;
     }
 
-    public void setFødselsår(String nyAAr){
+    public void setFodselsor(String nyAAr){
         this.birthYear=nyAAr;
     }
 }
