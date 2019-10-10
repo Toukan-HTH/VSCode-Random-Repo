@@ -4,16 +4,16 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 class ArbTaker{
     //* attributter personalia //
-    Person pers = new Person("Andre", "Bjerk", "1976");
+    Person pers = new Person("Andre", "Bjerk", "1999");
 
 
 
     //* Variabler fra classen "Person" ///////////
     String etterNavn = pers.getEtternavn();    //*
     String forNavn = pers.getFornav();         //*
-    String fodselsDato = pers.getFodselsdato();//*
-    int age = pers.getAlder();                 //*
+    String fodselsDato = pers.getFodselsdato();//*                
     //* / / / / / / / / / / / / / / / / / / /  //*
+
 
 
 
@@ -32,6 +32,43 @@ class ArbTaker{
         this.monthlyPay=monthlyPay;
         this.taxPercent=taxPercent;
     }
+
+
+
+
+
+    public void setMonthlyPay(double s){
+        this.monthlyPay=s;
+    }
+
+
+    public void setTaxPercent(double t){
+        this.taxPercent=t;
+    }
+
+
+    public void setFornavn(String s){
+        pers.setFornavn(s);
+        this.forNavn=pers.getFornav();
+    }
+
+
+    public void setEtternavn(String t){
+        pers.setEtternavn(t);
+        this.etterNavn=pers.getEtternavn();
+    }
+
+
+    public void setBirthday(String k){
+        pers.setFodselsor(k);
+        this.fodselsDato=pers.getFodselsdato();
+    }
+
+
+
+
+
+
 
 
 
@@ -70,6 +107,7 @@ class ArbTaker{
 
     //* Get metode for alder //
     public int getAlder(){
+        int age = pers.getAlder(); 
         return age;
     }
 

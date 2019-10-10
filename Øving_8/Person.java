@@ -17,9 +17,25 @@ class Person{
     }
 
 
+
+
+    public void setFornavn(String nyFornavn){
+        this.fornavn=nyFornavn;
+    }
+
+    public void setEtternavn(String nyEtternavn){
+        this.etternavn=nyEtternavn;
+    }
+
+    public void setFodselsor(String nyAAr){
+        this.birthYear=nyAAr;
+    }
+
+
     public String getFornav(){
         return fornavn;
     }
+    
 
     public String getEtternavn(){
         return etternavn;
@@ -37,15 +53,4 @@ class Person{
         return alder;
     }
 
-    public void setFornavn(String nyFornavn){
-        this.fornavn=nyFornavn;
-    }
-
-    public void setEtternavn(String nyEtternavn){
-        this.etternavn=nyEtternavn;
-    }
-
-    public void setFodselsor(String nyAAr){
-        this.birthYear=nyAAr;
-    }
 }
