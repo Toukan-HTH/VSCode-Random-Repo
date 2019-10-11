@@ -6,8 +6,15 @@ class OppgaveOversikt{
 
 
     public OppgaveOversikt(){
-        Student[] studentArray = new Student[1];
+        Student[] studentArray = new Student[3];
+        studentArray[0]=new Student("Hanne", 6);
+        studentArray[1]=new Student("Arne", 4);
+        studentArray[2]=new Student("Geir", 9);
         this.studentArray=studentArray;
+    }
+
+    public String getName(int i){
+        return studentArray[i].getName();
     }
 
 

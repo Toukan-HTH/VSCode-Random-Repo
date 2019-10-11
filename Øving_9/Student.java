@@ -14,13 +14,14 @@ class Student{
     }
 
     public int getAntOppg(){
-
+        return antOppg;
     }
 
 
 
     public void okAntOppg(int Okning){
-
+        antOppg=+Okning;
+        this.antOppg=antOppg;
     }
 
 
