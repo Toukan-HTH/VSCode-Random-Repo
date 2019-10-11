@@ -13,5 +13,23 @@ class Student{
         return navn;
     }
 
+    public int getAntOppg(){
+
+    }
+
+
+
+    public void okAntOppg(int Okning){
+
+    }
+
+
+    public String ToString(){
+        String s = (navn + " " + antOppg);
+        return s;
+    }
+
+
+
 
 }
