@@ -10,6 +10,7 @@ class OppgaveOversikt{
         studentArray[0]=new Student("Hanne", 6);
         studentArray[1]=new Student("Arne", 4);
         studentArray[2]=new Student("Geir", 9);
+        this.antStud=studentArray.length;
         this.studentArray=studentArray;
     }
 
