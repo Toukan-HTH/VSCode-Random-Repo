@@ -19,8 +19,8 @@ class Student{
 
 
 
-    public void okAntOppg(int Okning){
-        antOppg=+Okning;
+    public void okAntOppg(int Okning, int tidligerepoeng){
+        antOppg=tidligerepoeng+Okning;
         this.antOppg=antOppg;
     }
 
