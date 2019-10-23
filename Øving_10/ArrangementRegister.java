@@ -26,7 +26,14 @@ class ArrangementRegister{
 
 
     public void finnArangementerVGD(long dato){
-        
+        int tjener=0;
+        for(int i=0;arrangementer.size();i++){
+            if(arrangementer.get(i).getTidspunkt()==dato){
+                tjener++
+                System.out.println("\nArrangement nummer: " + tjener);
+                System.out.println("Nummer id : " + arrangementer.get(i).getNummer() + "\nSted :" + arrangementer.get(i).getSted() + "\nArrangor :" + arrangementer.get(i).getArrangor()+ "\nType :" + arrangementer.get(i).getType() + "\nTidspunkt :" + arrangementer.get(i).getTidspunkt());
+            }
+        }
     }
 
 
