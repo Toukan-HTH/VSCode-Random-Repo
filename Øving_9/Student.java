@@ -19,14 +19,13 @@ class Student{
 
 
 
-    public void okAntOppg(int Okning, int tidligerepoeng){
-        antOppg=tidligerepoeng+Okning;
-        this.antOppg=antOppg;
+    public void okAntOppg(int Okning){
+        this.antOppg+=Okning;
     }
 
 
     public String ToString(){
-        String s = (navn + " " + antOppg);
+        String s = ("Navn " + navn + " " + "Ant Oppgaver " + antOppg);
         return s;
     }
 

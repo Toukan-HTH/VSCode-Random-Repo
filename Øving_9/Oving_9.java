@@ -1,14 +1,9 @@
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-class Oving_9{
+class Oving_9{  
     public static void main(String[] args){
         OppgaveOversikt stud = new OppgaveOversikt();
-        //stud.increaseTasks(0, 2);
-        //stud.registerStudent("Henrik Hafsø", 7);
-        //int s = stud.getAntStudenter();
-        //int s = stud.getStudOppgaverSolved(0);
-        //System.out.println(s);
 
 
 
@@ -17,7 +12,7 @@ class Oving_9{
 
         int s = 0;
         while(s==0){
-            Object[] options = {"Finn Ant Stud Registrert", "Finn Ant Oppg til Bestemt Stud", "Registrer ny student", "Increase tasks for certain student", "Exit"}; 
+            Object[] options = {"Finn Ant Stud Registrert", "Finn Ant Oppg til Bestemt Stud", "Registrer ny student", "Increase tasks for certain student", "Exit", "To String"}; 
             JFrame frame = new JFrame("JOptionPane showMessageDialog example");
             int response = JOptionPane.showOptionDialog(null, "What do you want to do?", "Title",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, options, options[0]);
             if(response==0){
@@ -31,14 +26,6 @@ class Oving_9{
                 for(int i=0; i<newOptions.length;i++){
                     newOptions[i]=stud.getName(i);
                 }
-
-
-
-
-
-
-
-
                 int response2 = JOptionPane.showOptionDialog(null, "Hvilken Student?", "Title",JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE,null, newOptions, newOptions[0]);
                 JOptionPane.showMessageDialog(frame, stud.getStudOppgaverSolved(response2));
             }
@@ -75,6 +62,12 @@ class Oving_9{
             }
             if(response==4){
                 s++;
+            }
+
+            if(response==5){
+                for(int i =0; i<stud.getArray().length;i++){
+                    System.out.println(stud.ToString(i));
+                }
             }
         }
         System.exit(1);
