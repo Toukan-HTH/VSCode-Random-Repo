@@ -10,7 +10,7 @@ class ArrangementRegister{
     }
 
 
-/*
+
     public void finnArangementerVGS(String sted){
         int tjener=0;
         for(int i=0;i<arrangementer.size();i++){
@@ -45,7 +45,7 @@ class ArrangementRegister{
 
 
 
-*/
+
     public void registrerArrangement(String nummer, String sted, String arrangor, String type, String tidspunkt){
         int s =0;
         while(s==0){
@@ -63,11 +63,7 @@ class ArrangementRegister{
 
     public void sort(){
         int size = arrangementer.size();
-        //Collections.sort(this.arrangementer);  // Sorterer etter Lokasjon
-        //Collections.sort(this.arrangementer);  // Sorterer etter Type
-        //Collections.sort(this.arrangementer);  // Sorterer etter Tid
         Collections.sort(this.arrangementer);
-
         for(int i=0; i<size;i++){
             System.out.println(arrangementer.get(i).tostring());
         }

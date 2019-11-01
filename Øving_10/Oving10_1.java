@@ -1,20 +1,21 @@
 class Oving10_1{
     public static void main(String[] args){
         ArrangementRegister doot = new ArrangementRegister();
-        doot.registrerArrangement("111", "by1", "Henrik", "1", "2400");
-        doot.registrerArrangement("222", "by1", "Henrik", "1", "2300");
-        doot.registrerArrangement("333", "by2", "Henrik", "2", "2200");
-        doot.registrerArrangement("334", "by1", "Henrik", "1", "2100");
-        doot.registrerArrangement("335", "by1", "Henrik", "1", "2000");
-        doot.registrerArrangement("112", "by2", "Henrik", "3", "1900");
-        doot.registrerArrangement("113", "by2", "Henrik", "2", "1800");
-        doot.registrerArrangement("114", "by1", "Henrik", "1", "1700");
-        doot.registrerArrangement("223", "by2", "Henrik", "1", "1600");
-        doot.registrerArrangement("225", "by2", "Henrik", "1", "1500");
-        doot.registrerArrangement("226", "by1", "Henrik", "1", "1400");
+        doot.registrerArrangement("111345", "by1", "Henrik", "fest", "201911301800");
+        doot.registrerArrangement("222234", "by1", "Geir", "ikke fest", "201909301700");
+        doot.registrerArrangement("333253", "by2", "Henrik", "ikke fest", "201908301300");
+        doot.registrerArrangement("334123", "by1", "Henrik", "fest", "201905301100");
+        doot.registrerArrangement("335764", "by1", "Henrik", "fest", "201907251800");
+        doot.registrerArrangement("112345", "by2", "Geir", "ikke fest", "201906191700");
+        doot.registrerArrangement("113223", "by2", "Henrik", "ikke fest", "201902011900");
+        doot.registrerArrangement("115674", "by1", "Geir", "ikke fest", "201910291500");
+        doot.registrerArrangement("245623", "by2", "Geir", "fest", "201910281300");
+        doot.registrerArrangement("225234", "by2", "Henrik", "fest", "201904031500");
+        doot.registrerArrangement("226456", "by1", "Geir", "fest", "201904021600");
 
         //doot.finnArangementerVGS("by1");
+        doot.sort2();
+        System.out.println("");
         doot.sort();
-
     }
 }
