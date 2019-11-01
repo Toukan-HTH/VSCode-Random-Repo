@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 
@@ -9,14 +10,14 @@ class ArrangementRegister{
     }
 
 
-
+/*
     public void finnArangementerVGS(String sted){
         int tjener=0;
         for(int i=0;i<arrangementer.size();i++){
             if(arrangementer.get(i).getSted()==sted){
                 tjener++;
                 System.out.println("\nArrangement nummer: " + tjener);
-                System.out.println("Nummer id : " + arrangementer.get(i).getNummer() + "\nSted :" + arrangementer.get(i).getSted() + "\nArrangor :" + arrangementer.get(i).getArrangor()+ "\nType :" + arrangementer.get(i).getType() + "\nTidspunkt :" + arrangementer.get(i).getTidspunkt());
+                arrangementer.get(i).toString();
             }
         }
     }
@@ -25,13 +26,14 @@ class ArrangementRegister{
 
 
 
-    public void finnArangementerVGD(long dato){
+    public void finnArangementerVGD(String dato){
         int tjener=0;
-        for(int i=0;arrangementer.size();i++){
+        int size=arrangementer.size();
+        for(int i=0;i<size;i++){
             if(arrangementer.get(i).getTidspunkt()==dato){
-                tjener++
+                tjener++;
                 System.out.println("\nArrangement nummer: " + tjener);
-                System.out.println("Nummer id : " + arrangementer.get(i).getNummer() + "\nSted :" + arrangementer.get(i).getSted() + "\nArrangor :" + arrangementer.get(i).getArrangor()+ "\nType :" + arrangementer.get(i).getType() + "\nTidspunkt :" + arrangementer.get(i).getTidspunkt());
+                arrangementer.get(i).toString();
             }
         }
     }
@@ -43,8 +45,8 @@ class ArrangementRegister{
 
 
 
-
-    public void registrerArrangement(long nummer, String sted, String arrangor, String type, long tidspunkt){
+*/
+    public void registrerArrangement(String nummer, String sted, String arrangor, String type, String tidspunkt){
         int s =0;
         while(s==0){
             for(int i=0; i<arrangementer.size();i++){
@@ -58,4 +60,26 @@ class ArrangementRegister{
         }
     }
 
+
+    public void sort(){
+        int size = arrangementer.size();
+        //Collections.sort(this.arrangementer);  // Sorterer etter Lokasjon
+        //Collections.sort(this.arrangementer);  // Sorterer etter Type
+        //Collections.sort(this.arrangementer);  // Sorterer etter Tid
+        Collections.sort(this.arrangementer);
+
+        for(int i=0; i<size;i++){
+            System.out.println(arrangementer.get(i).tostring());
+        }
+    }
+
+
+    public void sort2(){
+        SorteringEtterTid sort = new SorteringEtterTid();
+        Collections.sort(arrangementer, sort);
+        int size = arrangementer.size();
+        for(int i=0; i<size;i++){
+            System.out.println(arrangementer.get(i).tostring());
+        }
+    }
 }
