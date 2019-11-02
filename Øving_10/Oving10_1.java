@@ -2,6 +2,10 @@ import java.util.*;
 class Oving10_1{
     public static void main(String[] args){
         ArrangementRegister doot = new ArrangementRegister();
+
+
+
+        //! TEST DATA //////////////////////////////////////////////////////////////////
         doot.registrerArrangement("111345", "by1", "Henrik", "fest", "201911301800");
         doot.registrerArrangement("222234", "by1", "Geir", "ikke fest", "201911301700");
         doot.registrerArrangement("333253", "by2", "Henrik", "ikke fest", "201908301300");
@@ -13,17 +17,7 @@ class Oving10_1{
         doot.registrerArrangement("245623", "by2", "Geir", "fest", "201910281300");
         doot.registrerArrangement("225234", "by2", "Henrik", "fest", "201904031500");
         doot.registrerArrangement("226456", "by1", "Geir", "fest", "201904021600");
-
-        //doot.finnArangementerVGS("by1");
-        //doot.sort2();
-        //System.out.println("");
-        //doot.sortering();
-
-
-        //doot.finnArangementerVGD("20191130");
-
-
-        //doot.finnArangementerTidsintervall("20180101", "20200101");
+        //! TEST DATA //////////////////////////////////////////////////////////////////
 
 
 
@@ -49,8 +43,12 @@ class Oving10_1{
             }
 
 
-
+            //* Switch med valgalternativer fra meny /////////////////////////////////////////////////////////////////
             switch(svar){
+
+
+                
+                //! 1: Registrere nytt arrangement /////////////////////
                 case 1:
                 System.out.println("Input valid nummer : 6 siffre for eksempel 123456");
                 String nummer = sc.nextLine();
@@ -71,6 +69,8 @@ class Oving10_1{
                 break;
 
 
+
+                //! 2: Finne alle arrangementene gitt en dato /////////////////////
                 case 2:
                 System.out.println("Finn alle arrangementene ved hvilken dato? : [YYYYMMDD]");
                 String svarDato = sc.nextLine();
@@ -78,12 +78,17 @@ class Oving10_1{
                 break;
 
 
+
+                //! 3: Finne alle arrangementene gitt et sted /////////////////////
                 case 3:
                 System.out.println("Finn alle arrangementene ved hvilket sted?");
                 String stedSvar = sc.nextLine();
                 doot.finnArangementerVGS(stedSvar);
                 break;
 
+
+
+                //! 4: Finne alle arrangementene innenfor et tidsintervall ////////
                 case 4:
                 System.out.println("Finn alle arrangementene innen tidsintervallet:");
                 System.out.println("Fra dato? [YYYYMMDD]");
@@ -94,11 +99,15 @@ class Oving10_1{
                 break;
 
 
+
+                //! 5: Lage liste over alle arrangementene og sortere ////////////
                 case 5:
                 doot.sortering();
                 break;
 
 
+
+                //! 6: Avslutt ///////////////////////////////////////////////////
                 case 6:
                 program++;
                 break;
