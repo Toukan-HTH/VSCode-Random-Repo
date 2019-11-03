@@ -6,6 +6,7 @@
             "request": "launch",
             "mainClass": "HelloWorld"
             "console": "integratedTerminal/externalTerminal"
+            "vmArgs": "--enable-preview"
         }
     ]
 }

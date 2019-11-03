@@ -2,7 +2,7 @@ class Rett{
     private String navn;
     private String type;
     private double pris;
-    private String oppskrift
+    private String oppskrift;
 
     public Rett(String type, double pris, String navn, String oppskrift){
         this.type=type;
