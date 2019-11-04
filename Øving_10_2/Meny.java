@@ -15,4 +15,8 @@ class Meny{
     public void leggTilRett(Rett nyrett){
         rettArray.add(nyrett);
     }
+
+    public ArrayList<Rett> getRettArray(){
+        return rettArray;
+    }
 }

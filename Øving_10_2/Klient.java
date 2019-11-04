@@ -8,8 +8,12 @@ class Klient{
         menyregister.rettRegisterAdd("lunsj",20.00,"Rett3","Dette er en oppskrift");
 
         menyregister.leggRettTilMeny("Meny1","Rett1");
+        menyregister.leggRettTilMeny("Meny1","Rett3");
+        menyregister.leggRettTilMeny("Meny1","Rett3");
         menyregister.leggRettTilMeny("Meny1","Rett2");
         menyregister.leggRettTilMeny("Meny1","Rett3");
+
+        menyregister.TEST();
 
 
 
