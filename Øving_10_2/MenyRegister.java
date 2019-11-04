@@ -80,9 +80,35 @@ class MenyRegister{
     }
 
 
-    public void TEST(){
-        System.out.println((((menyList.get(0)).getRettArray()).get(0)).getNavn());
-        System.out.println((((menyList.get(0)).getRettArray()).get(1)).getNavn());
-        System.out.println((((menyList.get(0)).getRettArray()).get(2)).getNavn());
+    public void getMenyInnenIntervall(double lavpris, double highpris){
+        for(int i =0;i<menyList.size();i++){
+            if((menyList.get(i)).getTotalPris()>lavpris && (menyList.get(i)).getTotalPris()<highpris){
+                System.out.println((menyList.get(i)).getNavn() + " Er Innenfor Intervallet");
+                //System.out.println((menyList.get(i)).getTotalPris());
+            }
+        }
+    }
+
+
+
+    public void getRettGittType(String type){
+        for(int i =0;i<rettList.size();i++){
+            if((rettList.get(i)).getType().equals(type)){
+                System.out.println((rettList.get(i)).getNavn() + " Er en rett med typen :" + type);
+            }
+        }
+    }
+
+
+
+    public void getRettGittNavn(String navn){
+        for(int i =0;i<rettList.size();i++){
+            if((rettList.get(i)).getNavn().equals(navn)){
+                System.out.println((rettList.get(i)).getNavn() + " Navn");
+                System.out.println((rettList.get(i)).getPris() + " Pris");
+                System.out.println((rettList.get(i)).getOppskrift() + " Oppskrift");
+                System.out.println((rettList.get(i)).getType() + " Type");
+            }
+        }
     }
 }

@@ -19,4 +19,13 @@ class Meny{
     public ArrayList<Rett> getRettArray(){
         return rettArray;
     }
+
+
+    public double getTotalPris(){
+        double pris=0;
+        for(int i =0;i<rettArray.size();i++){
+            pris=pris + rettArray.get(i).getPris();
+        }
+        return pris;
+    }
 }
