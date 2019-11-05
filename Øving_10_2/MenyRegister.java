@@ -30,7 +30,7 @@ class MenyRegister{
 
 
 
-    public void leggRettTilMeny(String navnMeny, String navnRett){
+    public void leggRettTilMeny(String navnMeny, String navnRett1, String navnRett2, String navnRett3){
     }
 
 
