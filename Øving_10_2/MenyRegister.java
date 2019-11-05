@@ -31,58 +31,6 @@ class MenyRegister{
 
 
     public void leggRettTilMeny(String navnMeny, String navnRett){
-        boolean ermenyregistrert=false;
-        int errettalleredeimeny=0;
-        int timer = 0;
-        while(timer==0){
-            for(int i=0;i<menyList.size();i++){
-                if(navnMeny.equals(menyList.get(i).getNavn())){
-                    int meny = i;
-                    ArrayList<Rett> menyretter = (menyList.get(meny)).getRettArray();
-                    for(int k=0;k<rettList.size();k++){
-                        if(navnRett.equals(rettList.get(k).getNavn())){
-                            for(int ming =0;ming<menyretter.size();ming++){
-                                if((menyretter.get(ming)).getNavn()==navnRett){
-                                    errettalleredeimeny++;
-                                    System.out.println("ERROR: Rett allerede i meny!");
-                                }
-                            }
-                        }
-                    }
-                    ermenyregistrert=true;
-                    timer++;
-                }
-            }
-            timer++;
-        }
-
-        if(errettalleredeimeny==0){
-            for(int i=0;i<menyList.size();i++){
-                if(navnMeny.equals(menyList.get(i).getNavn())){
-                    int meny = i;
-                    for(int k=0;k<rettList.size();k++){
-                        if(navnRett.equals(rettList.get(k).getNavn())){
-                            System.out.println("RETT LAGT TIL MENY: " + navnMeny + " Rett: " + rettList.get(k).getNavn());
-                            menyList.get(meny).leggTilRett(rettList.get(k));
-                        }
-                    }
-                }
-            }
-        }
-        if(!ermenyregistrert){
-            System.out.println("NY MENY REGISTRERT");
-            menyList.add(new Meny(navnMeny));
-            for(int i=0;i<menyList.size();i++){
-                if(navnMeny.equals(menyList.get(i).getNavn())){
-                    int meny = i;
-                    for(int k=0;k<rettList.size();k++){
-                        if(navnRett.equals(rettList.get(k).getNavn())){
-                            menyList.get(meny).leggTilRett(rettList.get(k));
-                        }
-                    }
-                }
-            }
-        }
     }
 
 

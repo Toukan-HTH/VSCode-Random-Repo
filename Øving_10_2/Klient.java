@@ -13,19 +13,6 @@ class Klient{
         menyregister.rettRegisterAdd("frokost",5.20,"Rett7","Dette er en oppskrift");
         menyregister.rettRegisterAdd("middag",4.20,"Rett8","Dette er en oppskrift");
         menyregister.rettRegisterAdd("lunsj",69.69,"Rett9","Dette er en oppskrift");
-
-        menyregister.leggRettTilMeny("Meny1","Rett1");
-        menyregister.leggRettTilMeny("Meny1","Rett1");
-        menyregister.leggRettTilMeny("Meny1","Rett3");
-        menyregister.leggRettTilMeny("Meny1","Rett2");
-
-        menyregister.leggRettTilMeny("Meny2","Rett4");
-        menyregister.leggRettTilMeny("Meny2","Rett5");
-        menyregister.leggRettTilMeny("Meny2","Rett6");
-
-        menyregister.leggRettTilMeny("Meny3","Rett7");
-        menyregister.leggRettTilMeny("Meny3","Rett8");
-        menyregister.leggRettTilMeny("Meny3","Rett9");
         //! /////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -90,25 +77,7 @@ class Klient{
                 double lavpris = Double.parseDouble(lavprisString);
                 menyregister.getMenyInnenIntervall(lavpris, highpris);
             }else if(svar==4){
-                menyregister.leggRettTilMeny("Meny1","Rett1");
-                System.out.println("Input Menynavn, ny eller tilstedet");
-                String menynavn =sc.nextLine();
-                System.out.println("Input Rettnavn");
-                String rettnavn =sc.nextLine();
-                System.out.println(menynavn + " Meny " + rettnavn + " Rett");
-                menyregister.leggRettTilMeny(menynavn,rettnavn);
-                menyregister.test();
-                menyregister.leggRettTilMeny("Meny1","Rett1");
             }
-
         }
-
-
-        //menyregister.getMenyInnenIntervall(1,90);
-
-        //menyregister.getRettGittType("lunsj");
-
-        //menyregister.getRettGittNavn("Rett1");
-
     }
 }
