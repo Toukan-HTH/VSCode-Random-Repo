@@ -5,18 +5,25 @@ class MenyRegister{
     public MenyRegister(){
     }
 
-    public void rettRegisterAdd(String type, double pris, String navn, String oppskrift){
+    public boolean rettRegisterAdd(String type, double pris, String navn, String oppskrift){
         int s =0;
+        boolean statement=false;
         while(s==0){
             for(int i=0; i<rettList.size();i++){
                 if(rettList.get(i).getNavn().equals(navn)){
                     System.out.println("Name is in use");
                     s++;
+                    statement= false;
                 }
             }
-            rettList.add(new Rett(type,pris, navn, oppskrift));
-            s++;
+            if(s==0){
+                rettList.add(new Rett(type,pris, navn, oppskrift));
+                s++;
+                statement= true;
+            }
         }
+
+        return statement;
     }
 
  
@@ -25,7 +32,7 @@ class MenyRegister{
 
     public void leggRettTilMeny(String navnMeny, String navnRett){
         boolean ermenyregistrert=false;
-        boolean errettalleredeimeny=false;
+        int errettalleredeimeny=0;
         int timer = 0;
         while(timer==0){
             for(int i=0;i<menyList.size();i++){
@@ -36,7 +43,7 @@ class MenyRegister{
                         if(navnRett.equals(rettList.get(k).getNavn())){
                             for(int ming =0;ming<menyretter.size();ming++){
                                 if((menyretter.get(ming)).getNavn()==navnRett){
-                                    errettalleredeimeny=true;
+                                    errettalleredeimeny++;
                                     System.out.println("ERROR: Rett allerede i meny!");
                                 }
                             }
@@ -46,22 +53,21 @@ class MenyRegister{
                     timer++;
                 }
             }
-            if(!errettalleredeimeny){
-                for(int i=0;i<menyList.size();i++){
-                    if(navnMeny.equals(menyList.get(i).getNavn())){
-                        int meny = i;
-                        for(int k=0;k<rettList.size();k++){
-                            if(navnRett.equals(rettList.get(k).getNavn())){
-                                System.out.println("RETT LAGT TIL MENY: " + navnMeny);
-                                menyList.get(meny).leggTilRett(rettList.get(k));
-                            }
+            timer++;
+        }
+
+        if(errettalleredeimeny==0){
+            for(int i=0;i<menyList.size();i++){
+                if(navnMeny.equals(menyList.get(i).getNavn())){
+                    int meny = i;
+                    for(int k=0;k<rettList.size();k++){
+                        if(navnRett.equals(rettList.get(k).getNavn())){
+                            System.out.println("RETT LAGT TIL MENY: " + navnMeny + " Rett: " + rettList.get(k).getNavn());
+                            menyList.get(meny).leggTilRett(rettList.get(k));
                         }
-                        ermenyregistrert=true;
-                        timer++;
                     }
                 }
             }
-            timer++;
         }
         if(!ermenyregistrert){
             System.out.println("NY MENY REGISTRERT");
@@ -94,7 +100,7 @@ class MenyRegister{
     public void getRettGittType(String type){
         for(int i =0;i<rettList.size();i++){
             if((rettList.get(i)).getType().equals(type)){
-                System.out.println((rettList.get(i)).getNavn() + " Er en rett med typen :" + type);
+                System.out.println((rettList.get(i)).getNavn() + " Er en rett med typen : " + type);
             }
         }
     }
@@ -110,5 +116,9 @@ class MenyRegister{
                 System.out.println((rettList.get(i)).getType() + " Type");
             }
         }
+    }
+
+    public void test(){
+        System.out.println(menyList.get(0).getRettArray().get(3).getNavn());
     }
 }
