@@ -25,7 +25,7 @@ class Klient{
             int svar =0;
             int scanner=0;
             while(scanner==0){
-                System.out.println("Hva vil du gjøre?\n 1: Registrere Ny Rett\n 2: Finne en rett, gitt navn\n 3: Finne alle retter gitt en type\n 4: Registrere ny meny eller legge til retter til menyer\n 5: Finne alle menyer med totalpris innen et intervall\n 6: Avslutt");
+                System.out.println("Hva vil du gjøre?\n 1: Registrere Ny Rett\n 2: Finne en rett, gitt navn\n 3: Finne alle retter gitt en type\n 4: Registrere ny meny med et sett med retter\n 5: Finne alle menyer med totalpris innen et intervall\n 6: Avslutt");
                 String svarstring = sc.nextLine();
                 Scanner skanner = new Scanner(svarstring);
                 if(skanner.hasNextInt()){
@@ -77,6 +77,16 @@ class Klient{
                 double lavpris = Double.parseDouble(lavprisString);
                 menyregister.getMenyInnenIntervall(lavpris, highpris);
             }else if(svar==4){
+                System.out.println("Hva heter den nye menyen?");
+                String menyNavn = sc.nextLine();
+                System.out.println("Hvilken 3 retter vil du legge til?");
+                System.out.println("1:");
+                String navnRett1 = sc.nextLine();
+                System.out.println("2:");
+                String navnRett2 = sc.nextLine();
+                System.out.println("3:");
+                String navnRett3 = sc.nextLine();
+                menyregister.leggRettTilMeny(menyNavn,navnRett1,navnRett2,navnRett3);
             }
         }
     }

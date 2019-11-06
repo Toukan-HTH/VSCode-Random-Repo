@@ -31,6 +31,26 @@ class MenyRegister{
 
 
     public void leggRettTilMeny(String navnMeny, String navnRett1, String navnRett2, String navnRett3){
+        menyList.add(new Meny(navnMeny));
+        for(int i = 0;i<menyList.size();i++){
+            if(menyList.get(i).getNavn()==navnMeny){
+                int menytall = i;
+                for(int j =0; j<rettList.size();j++){
+                    if(rettList.get(j).getNavn().equals(navnRett1)){
+                        menyList.get(menytall).leggTilRett(rettList.get(j));
+                    }
+                    if(rettList.get(j).getNavn().equals(navnRett2)){
+                        menyList.get(menytall).leggTilRett(rettList.get(j));
+                    }
+                    if(rettList.get(j).getNavn().equals(navnRett3)){
+                        menyList.get(menytall).leggTilRett(rettList.get(j));
+                    }
+                    
+                }
+            }
+        }
+        System.out.println("Ny meny registrert");
+
     }
 
 
