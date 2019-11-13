@@ -68,4 +68,8 @@ class Eiendom{
     public void setEier(String eier) {
         this.eier = eier;
     }
+
+    public String getID(){
+        return kommunenummer + "-" + gnr + "/" + bnr;
+    }
 }

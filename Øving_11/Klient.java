@@ -15,7 +15,7 @@ class Klient{
         while(teller==0){
 
             //Første Meny med 5 alternativ
-            System.out.println("Alternativ\n 1: Registrere inn eiendom\n 2: Skrive ut alle eiendommer som er registrert\n 3: Søke etter eiendom\n 4: Regne ut gjennomsnittsarealet\n 5: Avslutt");
+            System.out.println("Alternativ\n 1: Registrere inn eiendom\n 2: Skrive ut alle eiendommer som er registrert\n 3: lete etter eiendom\n 4: Regne ut gjennomsnittsarealet\n 5: Slett en eiendom\n 6: antall eiendommer\n 7: let ved gnr\n 9: Avslutt");
             String svar = meny.nextLine();
             try{
                 svarint = Integer.parseInt(svar);
@@ -23,7 +23,7 @@ class Klient{
                 System.out.println("Error! Please input valid number");
                 f = true;
             }
-            if(svarint<1 && !f || svarint>5 && !f){
+            if(svarint<1 && !f || svarint>9 && !f){
                 System.out.println("Error! Please input valid number");
             }
 
@@ -104,8 +104,29 @@ class Klient{
                 doot.getgjennomsnittareal();
                 break;
 
-                
+
                 case 5:
+                System.out.println("Kommunenummer");
+                int slettkommnr = sc.nextInt();
+                System.out.println("gnr");
+                int slettgnr = sc.nextInt();
+                System.out.println("bnr");
+                int slettbnr = sc.nextInt();
+                doot.removeEiendom(slettkommnr,slettgnr,slettbnr);
+                break;
+
+                case 6:
+                System.out.println(doot.getAntallEiendom());
+                break;
+
+                case 7:
+                System.out.println("gnr?");
+                int letvedgnr = sc.nextInt();
+                doot.getEiendomMedGnr(letvedgnr);
+                break;
+
+                
+                case 9:
                 teller++;
                 break;
             }

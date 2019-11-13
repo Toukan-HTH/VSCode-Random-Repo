@@ -21,7 +21,7 @@ class EiendomRegister{
 
     public void getAlleEiendommene(){
         for(int i=0;i<eiendomList.size();i++){
-            System.out.println(eiendomList.get(i).getKommunenummer() + "-" + eiendomList.get(i).getGnr() + "/" + eiendomList.get(i).getBnr());
+            System.out.println(eiendomList.get(i).getID());
         }
     }
 
@@ -41,9 +41,37 @@ class EiendomRegister{
             if(eiendomList.get(i).getKommunenummer()==kommunenummer){
                 if(eiendomList.get(i).getGnr()==gnr){
                     if(eiendomList.get(i).getBnr()==bnr){
-                        System.out.println(eiendomList.get(i).getKommunenummer() + "-" + eiendomList.get(i).getGnr() + "/" + eiendomList.get(i).getBnr());
+                        System.out.println(eiendomList.get(i).getID());
                     }
                 }
+            }
+        }
+    }
+
+
+
+    public void removeEiendom(int kommunenummer,int gnr, int bnr){
+        for(int i =0;i<eiendomList.size();i++){
+            if(eiendomList.get(i).getKommunenummer()==kommunenummer){
+                if(eiendomList.get(i).getGnr()==gnr){
+                    if(eiendomList.get(i).getBnr()==bnr){
+                        eiendomList.remove(i);
+                    }
+                }
+            }
+        }
+    }
+
+
+    public int getAntallEiendom(){
+        return eiendomList.size();
+    }
+
+
+    public void getEiendomMedGnr(int gnr){
+        for(int i =0;i<eiendomList.size();i++){
+            if(eiendomList.get(i).getGnr()==gnr){
+                System.out.println(eiendomList.get(i).getID());
             }
         }
     }
