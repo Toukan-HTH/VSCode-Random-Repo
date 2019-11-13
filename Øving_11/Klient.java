@@ -10,9 +10,9 @@ class Klient{
         doot.registrerEiendom(1445,"Gloppen",74,188,"",1457.2,"Karl Ove Bråten");
         doot.registrerEiendom(1445,"Gloppen",69,47,"Høiberg",1339.4,"Elsa Indregård");
         int teller =0;
-        boolean f = false;
         while(teller==0){
             int svarint=0;
+            boolean f = false;
             //Første Meny med 5 alternativ
             System.out.println("Alternativ\n 1: Registrere inn eiendom\n 2: Skrive ut alle eiendommer som er registrert\n 3: lete etter eiendom\n 4: Regne ut gjennomsnittsarealet\n 5: Slett en eiendom\n 6: antall eiendommer\n 7: let ved gnr\n 9: Avslutt");
             String svar = meny.nextLine();
