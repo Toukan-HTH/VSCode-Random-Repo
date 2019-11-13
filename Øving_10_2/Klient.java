@@ -3,7 +3,7 @@ class Klient{
     public static void main(String[] args){
         MenyRegister menyregister = new MenyRegister();
 
-        //! SETTER INN TEST RETTER OG TEST MENYER ///////////////////////////////////////////////
+        //! SETTER INN TEST RETTER  //////////////////////////////////////////////////////////////
         menyregister.rettRegisterAdd("frokost",89.29,"Rett1","Dette er en oppskrift");
         menyregister.rettRegisterAdd("middag",50.00,"Rett2","Dette er en oppskrift");
         menyregister.rettRegisterAdd("lunsj",20.00,"Rett3","Dette er en oppskrift");
@@ -25,7 +25,7 @@ class Klient{
             int svar =0;
             int scanner=0;
             while(scanner==0){
-                System.out.println("Hva vil du gjøre?\n 1: Registrere Ny Rett\n 2: Finne en rett, gitt navn\n 3: Finne alle retter gitt en type\n 4: Registrere ny meny med et sett med retter\n 5: Finne alle menyer med totalpris innen et intervall\n 6: Avslutt");
+                System.out.println("Alternativer\n 1: Registrere Ny Rett\n 2: Finne en rett, gitt navn\n 3: Finne alle retter gitt en type\n 4: Registrere ny meny med et sett med retter\n 5: Finne alle menyer med totalpris innen et intervall\n 6: Avslutt");
                 String svarstring = sc.nextLine();
                 Scanner skanner = new Scanner(svarstring);
                 if(skanner.hasNextInt()){

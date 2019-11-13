@@ -85,8 +85,4 @@ class MenyRegister{
             }
         }
     }
-
-    public void test(){
-        System.out.println(menyList.get(0).getRettArray().get(3).getNavn());
-    }
 }

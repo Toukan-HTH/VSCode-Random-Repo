@@ -7,10 +7,6 @@ class Arrangement implements Comparable<Arrangement>{
     private String tidspunkt;
 
 
-
-
-
-
     public Arrangement(String nummer, String sted, String arrangor, String type, String tidspunkt){
         this.nummer=nummer;
         this.sted=sted;
@@ -60,9 +56,6 @@ class Arrangement implements Comparable<Arrangement>{
 
     public int compareTo(Arrangement tidspunkt1){
         int result;
-        //if(this.sted.equals(((Arrangement)tidspunkt1).sted) && this.type.equals(((Arrangement)tidspunkt1).type)){
-            //result=this.tidspunkt.compareTo(tidspunkt1.getTidspunkt());
-        //}
         if(this.sted.equals(((Arrangement)tidspunkt1).sted)){
             result=this.type.compareTo(tidspunkt1.getType());
         }
@@ -70,6 +63,5 @@ class Arrangement implements Comparable<Arrangement>{
             result=this.sted.compareTo(tidspunkt1.getSted());
         }
         return result;
-        //return this.tidspunkt.compareTo(tidspunkt1.getTidspunkt());
     }
 }

@@ -48,21 +48,14 @@ class ArrangementRegister{
 
 
     public boolean registrerArrangement(String nummer, String sted, String arrangor, String type, String tidspunkt){
-        int s =0;
-        boolean statement = true;
-        while(s==0){
-            for(int i=0; i<arrangementer.size();i++){
-                if(nummer.equals(arrangementer.get(i).getNummer())){
-                    System.out.println("Dette Nummeret er i bruk");
-                    boolean statement1=false;
-                    s++;
-                    return statement1;
-                }
+        for(int i=0; i<arrangementer.size();i++){
+            if(nummer.equals(arrangementer.get(i).getNummer())){
+                System.out.println("Dette Nummeret er i bruk");
+                return false;
             }
-            arrangementer.add(new Arrangement(nummer, sted, arrangor, type, tidspunkt));
-            s++;
         }
-        return statement;
+        arrangementer.add(new Arrangement(nummer, sted, arrangor, type, tidspunkt));
+        return true;
     }
 
 
