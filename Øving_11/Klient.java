@@ -7,8 +7,6 @@ import java.util.*;
 class Klient{
     public static void main(String[] args){
         EiendomRegister doot = new EiendomRegister();
-        Scanner sc = new Scanner(System.in);
-        Scanner meny = new Scanner(System.in);
 
         // Testdata ----------------------------------------------------------------------------
         doot.registrerEiendom(1445,"Gloppen",77,631,"",1017.6,"Jens Olsen");
@@ -18,9 +16,11 @@ class Klient{
         doot.registrerEiendom(1445,"Gloppen",69,47,"HÃļiberg",1339.4,"Elsa IndregÃĨrd");
         // Testdata ----------------------------------------------------------------------------
 
-        
+
         int teller =0;
         while(teller==0){
+            Scanner sc = new Scanner(System.in);
+            Scanner meny = new Scanner(System.in);
             int svarint=0;
             boolean f = false;
             //Meny med 5 alternativ
