@@ -1,19 +1,29 @@
 import java.util.*;
+/*
+* Klassen Klient
+* @version 1.0.0 2019-11-14
+* @author Henrik Hafs�
+*/
 class Klient{
     public static void main(String[] args){
         EiendomRegister doot = new EiendomRegister();
         Scanner sc = new Scanner(System.in);
         Scanner meny = new Scanner(System.in);
+
+        // Testdata ----------------------------------------------------------------------------
         doot.registrerEiendom(1445,"Gloppen",77,631,"",1017.6,"Jens Olsen");
         doot.registrerEiendom(1445,"Gloppen",77,131,"Syningom",661.3,"Nicolay Madsen");
         doot.registrerEiendom(1445,"Gloppen",75,19,"Fugletun",650.6,"Evilyn Jensen");
-        doot.registrerEiendom(1445,"Gloppen",74,188,"",1457.2,"Karl Ove Bråten");
-        doot.registrerEiendom(1445,"Gloppen",69,47,"Høiberg",1339.4,"Elsa Indregård");
+        doot.registrerEiendom(1445,"Gloppen",74,188,"",1457.2,"Karl Ove BrÃĨten");
+        doot.registrerEiendom(1445,"Gloppen",69,47,"HÃļiberg",1339.4,"Elsa IndregÃĨrd");
+        // Testdata ----------------------------------------------------------------------------
+
+        
         int teller =0;
         while(teller==0){
             int svarint=0;
             boolean f = false;
-            //Første Meny med 5 alternativ
+            //Meny med 5 alternativ
             System.out.println("Alternativ\n 1: Registrere inn eiendom\n 2: Skrive ut alle eiendommer som er registrert\n 3: lete etter eiendom\n 4: Regne ut gjennomsnittsarealet\n 5: Slett en eiendom\n 6: antall eiendommer\n 7: let ved gnr\n 9: Avslutt");
             String svar = meny.nextLine();
             try{
@@ -132,3 +142,7 @@ class Klient{
         }
     }
 }
+
+/*
+-encoding utf8 -docencoding utf8 -charset utf8
+ */
