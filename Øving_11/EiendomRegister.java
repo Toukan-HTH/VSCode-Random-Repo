@@ -6,12 +6,13 @@ import java.util.*;
 * @author Henrik Hafsø
 */
 class EiendomRegister{
-    ArrayList<Eiendom> eiendomList = new ArrayList<Eiendom>();
+    private ArrayList<Eiendom> eiendomList;
 
     /**
      * Standardkonstruktør for å opprette object uten å gi initiell størrelse på eiendomregisterert
      */
     public EiendomRegister(){
+        eiendomList = new ArrayList<Eiendom>();
     }
 
 

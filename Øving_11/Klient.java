@@ -1,6 +1,7 @@
 import java.util.*;
 /*
 * Klassen Klient
+* Klasse som lage en menystyrt program for bruker av eiendomregisteret.
 * @version 1.0.0 2019-11-14
 * @author Henrik Hafsø
 */
@@ -22,9 +23,8 @@ class Klient{
             Scanner sc = new Scanner(System.in);
             Scanner meny = new Scanner(System.in);
             int svarint=0;
-            boolean f = false;
-            //Meny med 5 alternativ
-            System.out.println("Alternativ\n 1: Registrere inn eiendom\n 2: Skrive ut alle eiendommer som er registrert\n 3: lete etter eiendom\n 4: Regne ut gjennomsnittsarealet\n 5: Slett en eiendom\n 6: antall eiendommer\n 7: let ved gnr\n 9: Avslutt");
+            boolean f = false;  
+            System.out.println("\nAlternativ\n 1: Registrere inn eiendom\n 2: Skrive ut alle eiendommer som er registrert\n 3: lete etter eiendom\n 4: Regne ut gjennomsnittsarealet\n 5: Slett en eiendom\n 6: antall eiendommer\n 7: let ved gnr\n 9: Avslutt");
             String svar = meny.nextLine();
             try{
                 svarint = Integer.parseInt(svar);

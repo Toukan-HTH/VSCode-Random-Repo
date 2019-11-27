@@ -150,4 +150,8 @@ class Eiendom{
     public String getID(){
         return kommunenummer + "-" + gnr + "/" + bnr;
     }
+
+    public String toString(){
+        return kommunenummer + " " + gnr + " " + bnr + " " + kommunenavn + " " + bruksnavn + " " + areal + " " + eier + "\n";
+    }
 }
