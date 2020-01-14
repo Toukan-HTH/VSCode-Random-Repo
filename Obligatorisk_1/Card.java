@@ -4,7 +4,7 @@ public class Card {
     private final int face;
     
     // initialises with suit ('S'=spade, 'H'=heart, 'D'=diamonds, 'C'=clubs)
-    and face (1=ace, 2, ... 10, 11=knight, 12=queen and 13=king).
+    //and face (1=ace, 2, ... 10, 11=knight, 12=queen and 13=king).
     public Card(char suit, int face) {
     this.suit = suit;
     this.face = face;
