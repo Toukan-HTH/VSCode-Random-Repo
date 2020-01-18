@@ -71,6 +71,22 @@ public class Deck{
     }
 
 
+    public void map(){
+    }
 
+
+    public int reduce(ArrayList<Card> news){
+        return news.stream().map(Card::getFace).reduce(0, (a,b) ->  a+b);
+    }
+
+
+    public String anyMatch(ArrayList<Card> news){
+        boolean isPresent = news.stream().anyMatch(Card -> Card.getFace() == 12 && Card.getSuit()=='S');
+        if(isPresent){
+            return "Spar dame er i listen";
+        }else{
+            return "Spar dame er ikke i listen";
+        }
+    }
     
 }
