@@ -91,21 +91,15 @@ public class Deck{
 
 
     public String pokerFlush(ArrayList<Card> news){
-        int S1=0;
-        int H1=0;
-        int C1=0;
-        int D1=0;
-        S1=(int)news.stream().filter(s -> s.getSuit()=='S').count();
-        H1=(int)news.stream().filter(s -> s.getSuit()=='H').count();
-        C1=(int)news.stream().filter(s -> s.getSuit()=='C').count();
-        D1=(int)news.stream().filter(s -> s.getSuit()=='D').count();
+        int S1=(int)news.stream().filter(s -> s.getSuit()=='S').count();
+        int H1=(int)news.stream().filter(s -> s.getSuit()=='H').count();
+        int C1=(int)news.stream().filter(s -> s.getSuit()=='C').count();
+        int D1=(int)news.stream().filter(s -> s.getSuit()=='D').count();
 
-
-        if(S1==5||H1==5||D1==5||C1==5){
+        if(S1>=5||H1>=5||D1>=5||C1>=5){
             return "Lista er en poker-flush";
         }else{
             return "Lista er ikke en poker-flush";
         }
     }
-    
 }
