@@ -11,5 +11,6 @@ public class Klient{
         //System.out.println(sum);
         //String queen = test.anyMatch(news);
         //System.out.println(test.anyMatch(news));
+        System.out.println(test.pokerFlush(news));
     }
 }
