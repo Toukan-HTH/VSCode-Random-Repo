@@ -71,7 +71,8 @@ public class Deck{
     }
 
 
-    public void map(){
+    public void map(ArrayList<Card> news){
+        news.stream().map(Card::getSuit).forEach(s -> System.out.println(s));
     }
 
 

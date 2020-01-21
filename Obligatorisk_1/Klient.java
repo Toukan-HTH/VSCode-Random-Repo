@@ -6,7 +6,7 @@ public class Klient{
         ArrayList<Card> news = test.assign();
         //test.filterOgForeach();
         //test.filterOgCollect();
-        //test.map();
+        test.map(news);
         //int sum = test.reduce(news);
         //System.out.println(sum);
         //String queen = test.anyMatch(news);
