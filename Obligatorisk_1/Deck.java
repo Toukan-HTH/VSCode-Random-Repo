@@ -29,7 +29,7 @@ public class Deck{
 
 
 
-    public ArrayList<Card> assign(){
+    public ArrayList<Card> assign(int n){
         ArrayList<Card> newKortstokk = new ArrayList<Card>();
         //Kopierer kortstokken
         for(int i = 0; i<52; i++){
@@ -39,14 +39,13 @@ public class Deck{
 
 
         //finner n antall tilfeldige plukket ut kort & konverterer til int
-        double tilfeldigeDouble = (Math.random() * ((52 - 1) + 1)) + 1;
-        int tilfedige = (int)tilfeldigeDouble;
+        //double tilfeldigeDouble = (Math.random() * ((52 - 1) + 1)) + 1;
+        //int tilfedige = (int)tilfeldigeDouble;
 
         //lager endelige return arraylist
         ArrayList<Card> newnewKortstokk = new ArrayList<Card>();
-        for(int i =0 ; i<=tilfedige;i++){
-            double tilfeldigeDouble2 = (Math.random() * ((51-newnewKortstokk.size() - 1) + 1)) + 1;
-            int tilfedige2 = (int)tilfeldigeDouble2;
+        for(int i =0 ; i<n;i++){
+            int tilfedige2 = (int)(Math.random() * ((51-newnewKortstokk.size()-0+1)))+0;
             newnewKortstokk.add(newKortstokk.get(tilfedige2));
             newKortstokk.remove(tilfedige2);
         }
@@ -58,15 +57,15 @@ public class Deck{
 
 
 
-    public void filterOgForeach(){
-        kortstokk.stream().filter(s -> s.getSuit()=='S').forEach(s -> System.out.println(s.getFace()+" "+s.getSuit()));
+    public void filterOgForeach(ArrayList<Card> beep){
+        beep.stream().filter(s -> s.getSuit()=='S').forEach(s -> System.out.println(s.getFace()+" "+s.getSuit()));
     }
 
 
 
 
-    public void filterOgCollect(){
-        List<Card> hjerterkort = kortstokk.stream().filter(s -> s.getSuit()=='H').collect(Collectors.toList());
+    public void filterOgCollect(ArrayList<Card> beep){
+        List<Card> hjerterkort = beep.stream().filter(s -> s.getSuit()=='H').collect(Collectors.toList());
         hjerterkort.forEach(s -> System.out.println(s.getFace()+ " " + s.getSuit()));
     }
 
