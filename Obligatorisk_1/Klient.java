@@ -2,18 +2,7 @@ import java.util.ArrayList;
 import java.util.*;
 public class Klient{
     public static void main(String[] args){
-        //Deck test = new Deck();
-        //ArrayList<Card> news = test.assign();
-        //test.filterOgForeach();
-        //test.filterOgCollect();
-        //test.map(news);
-        //int sum = test.reduce(news);
-        //System.out.println(sum);
-        //String queen = test.anyMatch(news);
-        //System.out.println(test.anyMatch(news));
-        //System.out.println(test.pokerFlush(news));
         boolean start = true;
-        boolean testdeck = false;
         Scanner sc = new Scanner(System.in);
         Scanner bp = new Scanner(System.in);
         Deck news = new Deck();
@@ -22,7 +11,7 @@ public class Klient{
         while(start){
             int svar =0;
             boolean inputrecieved = false;
-            System.out.println("Velg alternativ:\n1: Assign, plukk tilfeldige kort\n2: Samle alle hjerter-kort i en ny liste\n3: Lage en ny liste med kortenes kortfarge\n4: Gi summen av kortverdiene\n5: Sjekk om spar dame finnes i listen\n6: Sjekk om listen er en poker-flush\n7: Skriv ut alle spar-kort\n9: Avslutt");
+            System.out.println("\nVelg alternativ:\n1: Assign, plukk tilfeldige kort\n2: Samle alle hjerter-kort i en ny liste\n3: Lage en ny liste med kortenes kortfarge\n4: Gi summen av kortverdiene\n5: Sjekk om spar dame finnes i listen\n6: Sjekk om listen er en poker-flush\n7: Skriv ut alle spar-kort\n9: Avslutt\n");
             String catchAns = sc.nextLine();
             try{
                 svar = Integer.parseInt(catchAns);
