@@ -23,4 +23,8 @@ class BonusMember{
         return point;
     }
 
+    public Personals getPersonals(){
+        return personals;
+    }
+
 }
