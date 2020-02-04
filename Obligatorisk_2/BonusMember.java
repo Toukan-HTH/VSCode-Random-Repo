@@ -23,8 +23,30 @@ class BonusMember{
         return point;
     }
 
+    public void registerPoints(int pointss){
+        this.point=point+pointss;
+    }
+
     public Personals getPersonals(){
         return personals;
+    }
+
+
+    public int findQualificationPoints(LocalDate idag){
+        int dagerMellom = Period.between(enrolledDate, idag).getDays();
+        int monthsMellom = Period.between(enrolledDate, idag).getMonths();
+        int yearsMellom = Period.between(enrolledDate, idag).getYears();
+        int totalDays = dagerMellom+monthsMellom*31+yearsMellom*365;
+        if(totalDays<=365){
+            return point;
+        }else{
+            return 5;
+        }
+    }
+
+
+    public boolean okPassword(String password){
+        return this.personals.okPassword(password);
     }
 
 }
