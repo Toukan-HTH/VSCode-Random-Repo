@@ -66,24 +66,22 @@ class MemberArchive{
 
     public void checkMembers(){
         for(int i = 0; i<members.size();i++){
-
-            if(members.get(i).findQualificationPoints(LocalDate.now())>=25000 && members.get(i).findQualificationPoints(LocalDate.now())<=74999){
-                members.set(i, new SilverMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
+            if(members.get(i).getClass().equals(BasicMember.class)){
+                if(members.get(i).findQualificationPoints(LocalDate.now())>=25000 && members.get(i).findQualificationPoints(LocalDate.now())<=74999){
+                    members.set(i, new SilverMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
+                }
+    
+                if(members.get(i).findQualificationPoints(LocalDate.now())>=75000){
+                    members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
+                }
             }
 
-            if(members.get(i).findQualificationPoints(LocalDate.now())>=75000){
-                members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
+            if(members.get(i).getClass().equals(SilverMember.class)){
+                if(members.get(i).findQualificationPoints(LocalDate.now())>=75000){
+                    members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
+                }
             }
         }
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -105,6 +103,16 @@ class MemberArchive{
         //list.add(new SilverMember(33333, new Personals("Tellefsen","Tove","Tove.email@outlook.com","password2"), LocalDate.of(2005, 1, 7)));
         //list.add(new GoldMember(44444, new Personals("Tellefsen","Tove","Tove.email@outlook.com","password3"), LocalDate.of(2010, 8, 7)));
         //System.out.println(findPoints("password123", 11111));
-        //System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
+        //
+        
+        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
+        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
+        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
+        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
+        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
+        poop.checkMembers();
+
+
+
     }
 }
