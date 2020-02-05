@@ -31,16 +31,15 @@ class BonusMember{
         return personals;
     }
 
-
     public int findQualificationPoints(LocalDate idag){
-        int dagerMellom = Period.between(enrolledDate, idag).getDays();
-        int monthsMellom = Period.between(enrolledDate, idag).getMonths();
-        int yearsMellom = Period.between(enrolledDate, idag).getYears();
-        int totalDays = dagerMellom+monthsMellom*31+yearsMellom*365;
-        if(totalDays<=365){
+        int dagerMellom = Period.between(idag, enrolledDate).getDays();
+        int monthsMellom = Period.between(idag, enrolledDate).getMonths();
+        int yearsMellom = Period.between(idag, enrolledDate).getYears();
+        int totalDays = -(dagerMellom+(monthsMellom*31)+(yearsMellom*365));
+        if(totalDays>=365){
             return point;
         }else{
-            return 5;
+            return 0;
         }
     }
 

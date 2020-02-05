@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+import java.time.*;
 import java.util.*;
 class MemberArchive{
     ArrayList<BonusMember> members;
@@ -89,18 +89,22 @@ class MemberArchive{
 
 
         for(int i = 0; i<members.size();i++){
+            System.out.println("Through member nr " + i);
             if(members.get(i) instanceof BasicMember){
                 if(members.get(i).findQualificationPoints(LocalDate.now())>=25000 && members.get(i).findQualificationPoints(LocalDate.now())<=74999){
+                    System.out.println("Upgrading basicmember nr " + i + " to Silver");
                     members.set(i, new SilverMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
                 }
     
                 if(members.get(i).findQualificationPoints(LocalDate.now())>=75000){
+                    System.out.println("Upgrading basicmember nr " + i + " to Gold");
                     members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
                 }
             }
 
             if(members.get(i) instanceof SilverMember){
                 if(members.get(i).findQualificationPoints(LocalDate.now())>=75000){
+                    System.out.println("Upgrading silvermember nr " + i + " to Gold");
                     members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
                 }
             }
@@ -111,29 +115,75 @@ class MemberArchive{
 
     public static void main(String[] args) throws Exception{
         MemberArchive poop = new MemberArchive();
-        Personals beep = new Personals("Hafso", "Henrik", "Henrik.t.h@outlook.com", "123456789");
-        //BonusMember boop = new BasicMember(1123, new Personals("Hafso", "Henrik", "Henrik.t.h@outlook.com", "123456789"), LocalDate.of(2002, 5, 5));
-        //System.out.println(boop.getEnrolledDate());
-        //BonusMember beepdiboop = new GoldMember(1122, beep, LocalDate.of(2012, 2, 21));
-        //boop.registerPoints(5000);
-        //System.out.println(boop.getPoints());
-        //LocalDate boof = LocalDate.of(2003, 5, 5);
-        //System.out.println(boop.findQualificationPoints(boof));
-        //System.out.println(boop.okPassword("123456789"));
-        //ArrayList<BonusMember> members = new ArrayList<BonusMember>();
-        //list.add(new BasicMember(11111, new Personals("Tellefsen","Ole","Ole.email@outlook.com","password123"), LocalDate.of(2015, 2, 6)));
-        //list.add(new BasicMember(22222, new Personals("Tellefsen","Tove","Tove.email@outlook.com","password1"), LocalDate.of(2005, 3, 7)));
-        //list.add(new SilverMember(33333, new Personals("Tellefsen","Tove","Tove.email@outlook.com","password2"), LocalDate.of(2005, 1, 7)));
-        //list.add(new GoldMember(44444, new Personals("Tellefsen","Tove","Tove.email@outlook.com","password3"), LocalDate.of(2010, 8, 7)));
-        //System.out.println(findPoints("password123", 11111));
-        //
-        
-        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
-        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
-        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
-        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
-        System.out.println(poop.newMember(beep,LocalDate.of(2015, 2, 6)));
-        poop.checkMembers();
+
+        boolean start = true;
+        while(start){
+            Scanner bp = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
+            int svar =0;
+            boolean inputrecieved = false;
+            System.out.println("\n1: Register new member\n2: Find points of member\n3: Register points to member\n4: Check and upgrade every member that qualifies\n9: Quit");
+            String catchAns = sc.nextLine();
+            try{
+                svar = Integer.parseInt(catchAns);
+                if(svar>=5 || svar>9 || svar<=0){
+                    System.out.println("Input er ikke et valid alternativ, vennligst input på nytt");
+                }
+                if(svar<=4 && svar>0 || svar==9){
+                    inputrecieved=true;
+                }
+            }catch (Exception e){
+                System.out.println("ERROR: Feil input. velg et nummer");
+            }
+
+            if(inputrecieved){
+                if(svar==1){
+                    System.out.println("Surname?");
+                    String surname = sc.nextLine();
+                    System.out.println("Firstname?");
+                    String firstname = sc.nextLine();
+                    System.out.println("Email adress?");
+                    String emailadr = sc.nextLine();
+                    System.out.println("Password?");
+                    String password = sc.nextLine();
+                    System.out.println("Year?");
+                    int year = sc.nextInt();
+                    System.out.println("Month?");
+                    int month = sc.nextInt();
+                    System.out.println("Day?");
+                    int day = sc.nextInt();
+                    System.out.println("memberid = " + poop.newMember(new Personals(surname,firstname,emailadr,password), LocalDate.of(year, month, day)));
+                    inputrecieved=false;
+                }
+
+                if(svar==2){
+                    System.err.println("Member ID?");
+                    int membernr = sc.nextInt();
+                    System.out.println("Password");
+                    String password = bp.nextLine();
+                    System.out.println("This member has " + poop.findPoints(password, membernr) + " Points");
+                    inputrecieved=false;
+                }
+
+                if(svar==3){
+                    System.out.println("Member ID?");
+                    int membernr = sc.nextInt();
+                    System.out.println("Points to add?");
+                    int points = bp.nextInt();
+                    System.out.println(poop.registerPoints(membernr, points));
+                    inputrecieved=false;
+                }
+
+                if(svar==4){
+                    poop.checkMembers();
+                    inputrecieved=false;
+                }
+
+                if(svar==9){
+                    start=false;
+                }
+            }
+        }
 
 
 
