@@ -48,4 +48,8 @@ class BonusMember{
         return this.personals.okPassword(password);
     }
 
+    public void setPoints(int points){
+        this.point=points;
+    }
+
 }
