@@ -36,7 +36,7 @@ class BonusMember{
         int monthsMellom = Period.between(idag, enrolledDate).getMonths();
         int yearsMellom = Period.between(idag, enrolledDate).getYears();
         int totalDays = -(dagerMellom+(monthsMellom*31)+(yearsMellom*365));
-        if(totalDays>=365){
+        if(totalDays<=365){
             return point;
         }else{
             return 0;

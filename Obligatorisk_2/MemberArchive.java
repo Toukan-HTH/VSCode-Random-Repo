@@ -31,7 +31,7 @@ class MemberArchive{
     private int findAvailableNo(){
         boolean loop = true;
         int random =0;
-        if(loop){
+        while(loop){
             random = (int)(Math.random() * ((99999-0+1)))+0;
             for(int i =0; i<members.size();i++){
                 if(random==members.get(i).getMemberNo()){
@@ -104,7 +104,7 @@ class MemberArchive{
             try{
                 svar = Integer.parseInt(catchAns);
                 if(svar>=5 || svar>9 || svar<=0){
-                    System.out.println("Input er ikke et valid alternativ, vennligst input på nytt");
+                    System.out.println("Input er ikke et valid alternativ, vennligst input poo nytt");
                 }
                 if(svar<=4 && svar>0 || svar==9){
                     inputrecieved=true;
