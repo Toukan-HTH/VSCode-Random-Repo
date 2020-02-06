@@ -1,7 +1,8 @@
 import java.time.*;
 class GoldMember extends BonusMember{
-    public GoldMember(int memberNo, Personals personals, LocalDate enrolledDate){
+    public GoldMember(int memberNo, Personals personals, LocalDate enrolledDate, int poeng){
         super(memberNo, personals, enrolledDate);
+        super.registerPoints(poeng);
     }
 
     @Override

@@ -70,25 +70,19 @@ class MemberArchive{
             if(members.get(i) instanceof BasicMember){
                 if(members.get(i).findQualificationPoints(LocalDate.now())>=25000 && members.get(i).findQualificationPoints(LocalDate.now())<=74999){
                     System.out.println("Upgrading basicmember nr " + i + " to Silver");
-                    int setpoint = members.get(i).getPoints();
-                    members.set(i, new SilverMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
-                    members.get(i).setPoints(setpoint);
+                    members.set(i, new SilverMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate(), members.get(i).getPoints()));
                 }
     
                 if(members.get(i).findQualificationPoints(LocalDate.now())>=75000){
                     System.out.println("Upgrading basicmember nr " + i + " to Gold");
-                    int setpoint = members.get(i).getPoints();
-                    members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
-                    members.get(i).setPoints(setpoint);
+                    members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate(), members.get(i).getPoints()));
                 }
             }
 
             if(members.get(i) instanceof SilverMember){
                 if(members.get(i).findQualificationPoints(LocalDate.now())>=75000){
                     System.out.println("Upgrading silvermember nr " + i + " to Gold");
-                    int setpoint = members.get(i).getPoints();
-                    members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate()));
-                    members.get(i).setPoints(setpoint);
+                    members.set(i, new GoldMember(members.get(i).getMemberNo(), members.get(i).getPersonals(), members.get(i).getEnrolledDate(), members.get(i).getPoints()));
                 }
             }
         }

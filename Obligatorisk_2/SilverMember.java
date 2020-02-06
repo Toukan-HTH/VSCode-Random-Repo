@@ -1,7 +1,8 @@
 import java.time.*;
 class SilverMember extends BonusMember{
-    public SilverMember(int memberNo, Personals personals, LocalDate enrolledDate){
+    public SilverMember(int memberNo, Personals personals, LocalDate enrolledDate, int poeng){
         super(memberNo, personals, enrolledDate);
+        super.registerPoints(poeng);
     }
 
     @Override
