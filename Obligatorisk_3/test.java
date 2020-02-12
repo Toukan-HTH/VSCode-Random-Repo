@@ -13,6 +13,7 @@ class test{
         String[] names3 = {"TEST5","TEST6"};
         System.out.println(viptribune.buyTicket(names));
         System.out.println(viptribune.buyTicket(names2));
+        System.out.println(viptribune.buyTicket(5));
         System.out.println(viptribune.buyTicket(names3));
         System.out.println(viptribune.buyTicket(names3));
         System.out.println(viptribune.buyTicket(names3));
