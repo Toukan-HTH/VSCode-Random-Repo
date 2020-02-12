@@ -1,5 +1,5 @@
 import java.util.*;
-abstract class Tribune{
+abstract class Tribune implements Comparable<Tribune>{
     private final String tribuneName;
     private final int capacity;
     private final int price;
@@ -28,4 +28,18 @@ abstract class Tribune{
     abstract public ArrayList<Ticket> buyTicket(int tickets);
 
     abstract public ArrayList<Ticket> buyTicket(String[] names);
+
+    public int compareTo(Tribune obj){
+        if(this.findIncome()<obj.findIncome()){
+            return 1;
+        }
+        else if(this.findIncome()>obj.findIncome()){
+            return -1;
+        }
+        else if(this.findIncome()==obj.findIncome()){
+            return 0;
+        }else{
+            return 0;
+        }
+    }
 }
