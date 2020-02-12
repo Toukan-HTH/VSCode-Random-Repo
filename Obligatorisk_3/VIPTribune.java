@@ -21,6 +21,7 @@ class VIPTribune extends SitTribune{
                     result.add(new SittingTicket(super.getTribunename(), super.getPrice(), row, seatsTaken+1));
                     seatsTaken++;
                     spectator[row][seatsTaken-1]=namesOfBuyers[f];
+                    //System.out.println(spectator[row][seatsTaken-1]);
                 }
                 super.setnoBusy(seatsTaken, i);
                 break;
