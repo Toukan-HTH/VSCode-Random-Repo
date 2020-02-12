@@ -22,3 +22,4 @@ class SittingTicket extends Ticket {
       res += " Rad: "+ row + " Plass: " + place;
       return res;
     }
+}

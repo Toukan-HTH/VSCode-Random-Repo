@@ -1,3 +1,4 @@
+import java.util.*;
 abstract class Tribune{
     private final String tribuneName;
     private final int capacity;
@@ -12,7 +13,19 @@ abstract class Tribune{
         return price;
     }
 
+    public int getCapacity(){
+        return capacity;
+    }
+
+    public String getTribunename(){
+        return tribuneName;
+    }
+
     abstract public int findNumberOfSoldTickets();
 
     abstract public int findIncome();
+
+    abstract public ArrayList<Ticket> buyTicket(int tickets);
+
+    abstract public ArrayList<Ticket> buyTicket(String[] names);
 }

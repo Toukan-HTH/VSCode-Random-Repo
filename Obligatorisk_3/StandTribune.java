@@ -1,3 +1,4 @@
+import java.util.*;
 class StandTribune extends Tribune{
     private int noSoldTickets;
     public StandTribune(String tribuneName, int capacity, int price){
