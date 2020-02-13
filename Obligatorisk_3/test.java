@@ -48,6 +48,11 @@ class test{
         System.out.println(tribunes[1].findIncome() + " " + tribunes[1].getTribunename());
         System.out.println(tribunes[2].findIncome() + " " + tribunes[2].getTribunename());
         System.out.println(tribunes[3].findIncome() + " " + tribunes[3].getTribunename());
+        System.out.println();
+        System.out.println(tribunes[0]);
+        System.out.println(tribunes[1]);
+        System.out.println(tribunes[2]);
+        System.out.println(tribunes[3]);
 
         
 
