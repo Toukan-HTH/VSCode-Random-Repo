@@ -42,4 +42,9 @@ abstract class Tribune implements Comparable<Tribune>{
             return 0;
         }
     }
+
+
+    public String toString(){
+        return getTribunename() + " " + getCapacity() + " " + findNumberOfSoldTickets() + " " + findIncome();
+    }
 }
