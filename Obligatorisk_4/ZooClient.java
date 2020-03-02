@@ -25,13 +25,25 @@ public class ZooClient {
         animals.add(new Bat("Cistugo  ", 3002));
         zoo.setAnimals(animals);   
         System.out.println("Settup done");
-        try{
+
+        try{  
             List<Object> flyers = zoo.getAnimals().stream().filter(p -> p instanceof Flyable).collect(Collectors.toList());
             flyers.stream().forEach(p -> {
                 System.out.println(((Flyable)p).fly());;
             });
-        }catch (Exception e){
-            System.exit(1);
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+
+        try{
+            List<Object> mammals = zoo.getAnimals().stream().filter(p -> p instanceof Mammal).filter(p -> p instanceof Jumpable).collect(Collectors.toList());
+            
+            mammals.stream().forEach(p -> {
+                System.out.println(((Jumpable)p).jump());
+            });
+        }catch(Exception e){
+            System.out.println(e.getMessage());
         }
 
     }
