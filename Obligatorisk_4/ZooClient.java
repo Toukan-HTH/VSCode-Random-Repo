@@ -27,12 +27,12 @@ public class ZooClient {
         System.out.println("Settup done");
 
         try{  
-            List<Object> flyers = zoo.getAnimals().stream().filter(p -> p instanceof Flyable).collect(Collectors.toList());
+            List<Object> flyers = zoo.getAnimals().stream().filter(p -> p instanceof Walkable).collect(Collectors.toList());
             flyers.stream().forEach(p -> {
                 System.out.println(((Flyable)p).fly());;
             });
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+        }catch(ClassCastException e){
+            e.printStackTrace();
         }
 
 
@@ -42,8 +42,8 @@ public class ZooClient {
             mammals.stream().forEach(p -> {
                 System.out.println(((Jumpable)p).jump());
             });
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+        }catch(ClassCastException e){
+            e.printStackTrace();
         }
 
     }
