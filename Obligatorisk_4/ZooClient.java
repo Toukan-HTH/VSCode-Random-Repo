@@ -9,15 +9,19 @@ public class ZooClient {
    
         Collection<Animal> animals = new ArrayList<Animal>();
    
-        animals.add(new Crocodile("Crocodylus niloticus", 1001));
-        animals.add(new Crocodile("Crocodylus niloticus", 1002));
-        animals.add(new Crocodile("Crocodylus porosus", 1101));
-        animals.add(new Crocodile("Crocodylus porosus", 1102));
+
+
+        animals.add(new Crocodile("s", 0100));
+
+
+        animals.add(new Crocodile("test1", 1002));
+        animals.add(new Crocodile("test2", 1101));
+        animals.add(new Crocodile("test3", 1102));
         animals.add(new Pelican("Brown Pelican  ", 4001));
         animals.add(new Pelican("Dalmatian Pelican  ", 4101));
    
    
-        animals.add(new Whale("Blue whale", 2001));
+        animals.add(new Whale("s", 2001));
         animals.add(new Whale("Blue whale", 2002));
         animals.add(new Whale("Minke whale", 2101));
         animals.add(new Whale("Minke whale", 2102));
@@ -27,12 +31,13 @@ public class ZooClient {
         System.out.println("Settup done");
 
         try{  
-            List<Object> flyers = zoo.getAnimals().stream().filter(p -> p instanceof Walkable).collect(Collectors.toList());
+            List<Object> flyers = zoo.getAnimals().stream().filter(p -> p instanceof Flyable).collect(Collectors.toList());
             flyers.stream().forEach(p -> {
                 System.out.println(((Flyable)p).fly());;
             });
         }catch(ClassCastException e){
             e.printStackTrace();
+            System.exit(1);
         }
 
 
@@ -44,6 +49,7 @@ public class ZooClient {
             });
         }catch(ClassCastException e){
             e.printStackTrace();
+            System.exit(1);
         }
 
     }
